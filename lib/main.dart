@@ -12,16 +12,20 @@ import 'package:getx_tips_tricks/docs/state_manage_docs.dart';
 import 'package:getx_tips_tricks/tips/bottom_sheet.dart';
 import 'package:getx_tips_tricks/tips/dialog.dart';
 import 'package:getx_tips_tricks/tips/getx_controller.dart';
+import 'package:getx_tips_tricks/tips/internalization.dart';
 import 'package:getx_tips_tricks/tips/reactive_state.dart';
 import 'package:getx_tips_tricks/tips/route_navigate.dart';
 import 'package:getx_tips_tricks/tips/route_to_named.dart';
 import 'package:getx_tips_tricks/tips/state_manage.dart';
 import 'package:getx_tips_tricks/tips/state_manage_class.dart';
+import 'package:getx_tips_tricks/view/grid_view.dart';
 import 'package:getx_tips_tricks/view/home.dart';
-import 'package:getx_tips_tricks/view/test.dart';
+import 'package:getx_tips_tricks/controllers.dart/test_controller.dart';
+import 'package:getx_tips_tricks/view/test_view.dart';
 
 import 'constants.dart';
 import 'helper/binding.dart';
+import 'lang/message.dart';
 import 'tips/snackbar.dart';
 
 void main() {
@@ -36,6 +40,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+
+      translations: Messages(), // your translations,
+      locale: const Locale('en', 'US'), // default locale // to get device locale Get.deviceLocale
+      fallbackLocale: const Locale('en', 'US'), // fallback locale if wrong locale found
+      
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
       theme: ThemeData(
@@ -47,7 +56,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       defaultTransition: Transition.leftToRight,
       getPages: [
-        GetPage(name: "/", page: () => const Home()),
+        // GetPage(name: "/", page: () => GridViewPage()),
+        GetPage(name: "/", page: () => const TestView()),
         GetPage(name: "/snackBar", page: () => const SnackBarPage()),
         GetPage(name: "/snackBarDocs", page: () => SnackBarDocs()),
         GetPage(name: "/dialog", page: () => const DialogPage()),
@@ -65,7 +75,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/getxController", page: () => GetxControllerPage()),
         GetPage(name: "/getxControllerDocs", page: () => GetxControllerDocs()),
         GetPage(name: "/reactiveState", page: () => ReactiveState()),
-        GetPage(name: "/reactiveStateDocs", page: () => ReactiveStateDocs())
+        GetPage(name: "/reactiveStateDocs", page: () => ReactiveStateDocs()),
+        GetPage(name: "/internalization", page: () => Internalization())
       ],
     );
   }

@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_tips_tricks/controllers.dart/tips_list_controller.dart';
-import 'package:getx_tips_tricks/models/tips_list_model.dart';
+import 'package:getx_tips_tricks/controllers.dart/test_controller.dart';
 import 'package:getx_tips_tricks/widgets/custom_button.dart';
 import 'package:getx_tips_tricks/widgets/custom_icon_button.dart';
-class GridViewPage extends StatefulWidget {
-  GridViewPage({ Key? key }) : super(key: key);
+
+class TestView extends StatefulWidget {
+  const TestView({ Key? key }) : super(key: key);
 
   @override
-  State<GridViewPage> createState() => _GridViewPageState();
+  _TestViewState createState() => _TestViewState();
 }
 
-class _GridViewPageState extends State<GridViewPage> {
+class _TestViewState extends State<TestView> {
+  List<Map<String, dynamic>> currentList = [];
+  List<Map<String, dynamic>> results = [];
   TextEditingController searchController = TextEditingController();
 
   String searchKey = '';
-
-  final TipsController tipsController = Get.put(TipsController());
-
-  // final currentList = Get.find<TipsController>().tips.length;
+  @override
+  initState() {
+    currentList = listData;
+    super.initState();
+  }
 
   Widget customSearch(double width) {
     return Padding(
@@ -37,7 +40,7 @@ class _GridViewPageState extends State<GridViewPage> {
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: searchKey.isNotEmpty
                 ? CustomIconButton(
-                  onPress: (){},
+                  onPress: _clearSearchKey,
                   icon: Icons.clear)
                   : null,
 
@@ -71,15 +74,24 @@ class _GridViewPageState extends State<GridViewPage> {
     );
   }
 
-  _searchTips(String enteredKeyword) {
-    searchKey = enteredKeyword;
-    setState(() {
+  void _searchTips(String enteredKey) {
+    searchKey = enteredKey;
+    
+    //setState(() {
       if(searchKey.isEmpty) {
-        print('Empty');
-        return;
+        results = listData;
+        
       } else{
-        // print(currentList);
+        results = listData
+        .where((val) =>
+          val["name"].toString().toLowerCase().contains(enteredKey.toLowerCase())).toList();
+        print(results);
       }
+    //});
+
+    // Refresh UI
+    setState(() {
+      currentList = results;
     });
   }
   _clearSearchKey() {
@@ -88,20 +100,16 @@ class _GridViewPageState extends State<GridViewPage> {
     _searchTips(searchKey);
   }
 
-  @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: const Text('GetX'),
-        automaticallyImplyLeading: false,
+        title: const Text('View'),
         actions: [
-          customSearch(200)
+          customSearch(180)
         ],
       ),
-      body: GetX<TipsController>(
-        builder: (controller) {
-          return GridView.builder(
-            itemCount: controller.tips.length,
+      body: GridView.builder(
+            itemCount: currentList.length,
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 // crossAxisCount: 2,
                 maxCrossAxisExtent: 180,
@@ -113,17 +121,16 @@ class _GridViewPageState extends State<GridViewPage> {
               return Padding(
                 padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
                 child: CustomButton(
-                  text: tipsController.tips[index].name,
+                  text: currentList[index]['name'],
                   onPress: (){
-                    Get.toNamed(tipsController.tips[index].route, arguments: {
-                      'Docs': tipsController.tips[index].docs
+                    Get.toNamed(currentList[index]['route'], arguments: {
+                      'Docs': currentList[index]['docs']
                     });
                   }
                 ),
               );
             }
-          );
-        }),
+          )
     );
   }
 }

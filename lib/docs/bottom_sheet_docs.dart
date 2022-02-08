@@ -13,9 +13,10 @@ class BottomSheetDocs extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Bottom Sheet Class"),
         leading: CustomIconButton(
+          icon: Icons.arrow_back_ios,
           onPress:() {
             // Get.back();
-            Get.to(const Home());
+            Get.to(Home());
           }
         )
       ),

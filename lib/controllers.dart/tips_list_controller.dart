@@ -56,6 +56,11 @@ class TipsController extends GetxController {
         name: 'ReactiveState',
         route: '/reactiveState',
         docs: '/reactiveStateDocs'  
+      ),
+      TipsListModel(
+        name: 'Internalization',
+        route: '/internalization',
+        docs: '/reactiveStateDocs'  
       )
     ];
     tips.value = tipsResult;

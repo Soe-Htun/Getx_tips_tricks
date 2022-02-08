@@ -12,8 +12,9 @@ class RouteToNamedDocs extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: CustomIconButton(
+          icon: Icons.arrow_back_ios,
           onPress: (){
-            Get.to(const Home());
+            Get.to(Home());
             // Get.back();
           }
         ),

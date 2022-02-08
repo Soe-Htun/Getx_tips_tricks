@@ -12,6 +12,7 @@ class SnackBarPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: CustomIconButton(
+          icon: Icons.arrow_back_ios,
           onPress: (){
             Get.back();
           }

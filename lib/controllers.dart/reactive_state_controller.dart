@@ -6,8 +6,10 @@ class ReactiveStateController extends GetxController {
 
   void increment() {
     count++;
+    update(); // Will update the count variable on UI
   }
   void decrement() {
     count--;
+    update();
   }
 }
