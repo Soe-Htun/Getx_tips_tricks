@@ -15,4 +15,4 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-![Flutter Grid View](https://github.com/Soe-Htun/Getx_tips_tricks/issues/1#issue-1126813999)
+![Flutter Grid View](https://user-images.githubusercontent.com/58510288/152924355-7a1d7432-4919-4b74-a602-2fc8bad3a225.png)
