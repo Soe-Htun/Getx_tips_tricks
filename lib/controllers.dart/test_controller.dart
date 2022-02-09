@@ -46,4 +46,9 @@ final List<Map<String, dynamic>> listData = [
     "route": '/internalization',
     "docs": '/internalizationDocs'
   },
+  {
+    "name": 'ApiData',
+    "route": '/apiData',
+    "docs": '/apiDataDocs'
+  },
 ];

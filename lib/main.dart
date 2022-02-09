@@ -9,6 +9,7 @@ import 'package:getx_tips_tricks/docs/route_to_named_docs.dart';
 import 'package:getx_tips_tricks/docs/snackbar_docs.dart';
 import 'package:getx_tips_tricks/docs/state_manage_class_docs.dart';
 import 'package:getx_tips_tricks/docs/state_manage_docs.dart';
+import 'package:getx_tips_tricks/tips/api_data.dart';
 import 'package:getx_tips_tricks/tips/bottom_sheet.dart';
 import 'package:getx_tips_tricks/tips/dialog.dart';
 import 'package:getx_tips_tricks/tips/getx_controller.dart';
@@ -76,7 +77,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/getxControllerDocs", page: () => GetxControllerDocs()),
         GetPage(name: "/reactiveState", page: () => ReactiveState()),
         GetPage(name: "/reactiveStateDocs", page: () => ReactiveStateDocs()),
-        GetPage(name: "/internalization", page: () => Internalization())
+        GetPage(name: "/internalization", page: () => Internalization()),
+        GetPage(name: "/apiData", page: () => ApiData())
       ],
     );
   }
