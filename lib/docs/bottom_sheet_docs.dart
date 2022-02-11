@@ -16,7 +16,7 @@ class BottomSheetDocs extends StatelessWidget {
           icon: Icons.arrow_back_ios,
           onPress:() {
             // Get.back();
-            Get.to(Home());
+            Get.offAll(Home());
           }
         )
       ),

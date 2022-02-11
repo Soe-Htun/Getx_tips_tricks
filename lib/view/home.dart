@@ -8,10 +8,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('GetX'),
-        automaticallyImplyLeading: false,
-      ),
+      // appBar: AppBar(
+      //   // title: const Text('GetX'),
+      //   automaticallyImplyLeading: false,
+      // ),
       // body: GridViewPage(),
       body: const TestView(),
       // drawer: MainDrawer(),

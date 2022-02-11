@@ -103,6 +103,7 @@ class _TestViewState extends State<TestView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('View'),
         actions: [
           customSearch(180)
