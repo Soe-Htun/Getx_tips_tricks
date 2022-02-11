@@ -27,6 +27,6 @@ samples, guidance on mobile development, and a full API reference.
 [![Flutter Getx Internalization](https://user-images.githubusercontent.com/58510288/153540262-17cc492a-f450-4a0e-8015-1edb473a7942.png)](https://user-images.githubusercontent.com/58510288/153539988-880f3da2-daf2-42f8-b053-e6081c8b2367.mp4
 )
 
-[![Flutter Getx ApiData](https://user-images.githubusercontent.com/58510288/153540315-ca4a7b99-e74c-4e01-93b8-0d6cc052d5f2.png)](https://user-images.githubusercontent.com/58510288/153540062-89427b25-c0b7-4f58-90e6-91f0a9eb91ee.mp4
+[![Flutter Getx Api Data](https://user-images.githubusercontent.com/58510288/153540315-ca4a7b99-e74c-4e01-93b8-0d6cc052d5f2.png)](https://user-images.githubusercontent.com/58510288/153540062-89427b25-c0b7-4f58-90e6-91f0a9eb91ee.mp4
 )
 
