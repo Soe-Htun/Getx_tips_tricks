@@ -44,7 +44,8 @@ class BottomSheetPage extends StatelessWidget {
               
              barrierColor: Get.isDarkMode? Colors.black : Colors.grey, // body color
 
-              backgroundColor: Get.isDarkMode? Colors.black : Colors.white, // Background color of bottomsheet
+              // backgroundColor: Get.isDarkMode? Colors.black : Colors.white, // Background color of bottomsheet
+              backgroundColor: kPrimaryColor,
               isDismissible: true,
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(

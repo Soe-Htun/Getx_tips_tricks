@@ -26,7 +26,10 @@ class ApiData extends StatelessWidget {
       body: SingleChildScrollView(
         child: Obx(() {
           if(apiController.isLoading.value) {
-            return const Center(child: CircularProgressIndicator());
+            return  Container(
+              height: MediaQuery.of(context).size.height,
+              child: Center(child: CircularProgressIndicator()),
+            );
           } else {
            return ListView.builder(
               scrollDirection: Axis.vertical,
